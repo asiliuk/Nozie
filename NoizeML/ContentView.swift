@@ -10,7 +10,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        List(SoundScene.allCases, id: \.rawValue) { scene in
+            VStack(alignment: .leading, spacing: 16) {
+
+                scene.coverImage
+                    .flatMap(Gif.init)
+                    .map(GifPlayer.init)
+                    .map(GifPlayerView.init)
+
+                Text(scene.title)
+                    .font(Font.title.bold())
+
+            }
+            .padding(.vertical)
+        }
     }
 }
 
