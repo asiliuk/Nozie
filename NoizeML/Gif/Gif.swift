@@ -5,14 +5,16 @@ import ImageIO
 struct Gif {
     struct Frame {
         let image: CGImage
-        let delay: TimeInterval
+        let delay: Measurement<UnitDuration>
     }
 
     let frames: [Frame]
 
-    init(source: CGImageSource) {
+    init?(source: CGImageSource) {
         let count = CGImageSourceGetCount(source)
-        self.frames = (0..<count).compactMap { Frame(source: source, index: $0) }
+        let frames = (0..<count).compactMap { Frame(source: source, index: $0) }
+        guard !frames.isEmpty else { return nil }
+        self.frames = frames
     }
 }
 
@@ -44,7 +46,7 @@ extension Gif.Frame {
         }
 
         self.image = image
-        self.delay = properties.gifDelay
+        self.delay = Measurement(value: properties.gifDelay, unit: UnitDuration.seconds)
     }
 }
 
