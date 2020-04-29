@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E677BCFB2452DE1300A498E7 /* SoundScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E677BCFA2452DE1300A498E7 /* SoundScene.swift */; };
+		E6A87DA22459E1E000F4A11F /* SoundSceneStateIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A87DA12459E1E000F4A11F /* SoundSceneStateIndicator.swift */; };
 		E6BDF0CE2451F63800F3C406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BDF0CD2451F63800F3C406 /* AppDelegate.swift */; };
 		E6BDF0D02451F63800F3C406 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BDF0CF2451F63800F3C406 /* SceneDelegate.swift */; };
 		E6BDF0D22451F63800F3C406 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BDF0D12451F63800F3C406 /* ContentView.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		E677BCFA2452DE1300A498E7 /* SoundScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundScene.swift; sourceTree = "<group>"; };
+		E6A87DA12459E1E000F4A11F /* SoundSceneStateIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSceneStateIndicator.swift; sourceTree = "<group>"; };
 		E6BDF0CA2451F63800F3C406 /* NoizeML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoizeML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BDF0CD2451F63800F3C406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6BDF0CF2451F63800F3C406 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				E6BDF0CF2451F63800F3C406 /* SceneDelegate.swift */,
 				E677BCFA2452DE1300A498E7 /* SoundScene.swift */,
 				E6BDF0D12451F63800F3C406 /* ContentView.swift */,
+				E6A87DA12459E1E000F4A11F /* SoundSceneStateIndicator.swift */,
 				E6BDF0D32451F63900F3C406 /* Assets.xcassets */,
 				E6BDF0D82451F63900F3C406 /* LaunchScreen.storyboard */,
 				E6BDF0DB2451F63900F3C406 /* Info.plist */,
@@ -318,6 +321,7 @@
 				E677BCFB2452DE1300A498E7 /* SoundScene.swift in Sources */,
 				E6BDF0D22451F63800F3C406 /* ContentView.swift in Sources */,
 				E6BDF11B2451FD8400F3C406 /* Gif.swift in Sources */,
+				E6A87DA22459E1E000F4A11F /* SoundSceneStateIndicator.swift in Sources */,
 				E6BDF11D2452CF0000F3C406 /* GifPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
