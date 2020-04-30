@@ -15,9 +15,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(screen.cards, id: \.scene.rawValue) { card in
-                SceneCardView(card: card).padding(.vertical)
+                Spacer()
+
+                SceneCardView(card: card)
+                    .padding(.vertical)
+                    .frame(maxWidth: 600, alignment: .center)
+
+                Spacer()
             }
             .navigationBarTitle("Sound scenes")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
