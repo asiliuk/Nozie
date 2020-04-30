@@ -40,6 +40,9 @@
 		E6BDF1172451F69600F3C406 /* i8.gif in Resources */ = {isa = PBXBuildFile; fileRef = E6BDF1032451F69600F3C406 /* i8.gif */; };
 		E6BDF11B2451FD8400F3C406 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BDF11A2451FD8400F3C406 /* Gif.swift */; };
 		E6BDF11D2452CF0000F3C406 /* GifPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BDF11C2452CF0000F3C406 /* GifPlayer.swift */; };
+		E6CFA798245B3A89005E3B8C /* SoundScenesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA797245B3A89005E3B8C /* SoundScenesScreen.swift */; };
+		E6CFA79A245B3AA9005E3B8C /* OnDemandResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA799245B3AA9005E3B8C /* OnDemandResource.swift */; };
+		E6CFA79C245B3AFE005E3B8C /* SoundSceneOnDemandStateIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA79B245B3AFE005E3B8C /* SoundSceneOnDemandStateIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		E6BDF1032451F69600F3C406 /* i8.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = i8.gif; sourceTree = "<group>"; };
 		E6BDF11A2451FD8400F3C406 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		E6BDF11C2452CF0000F3C406 /* GifPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifPlayer.swift; sourceTree = "<group>"; };
+		E6CFA797245B3A89005E3B8C /* SoundScenesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundScenesScreen.swift; sourceTree = "<group>"; };
+		E6CFA799245B3AA9005E3B8C /* OnDemandResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDemandResource.swift; sourceTree = "<group>"; };
+		E6CFA79B245B3AFE005E3B8C /* SoundSceneOnDemandStateIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSceneOnDemandStateIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +119,10 @@
 		E64DBADF245B2B8E005CD0DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E6BDF11E2452CF0500F3C406 /* Gif */,
 				E677BCFA2452DE1300A498E7 /* SoundScene.swift */,
+				E6CFA797245B3A89005E3B8C /* SoundScenesScreen.swift */,
+				E6CFA799245B3AA9005E3B8C /* OnDemandResource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,9 +131,10 @@
 			isa = PBXGroup;
 			children = (
 				E6BDF0D12451F63800F3C406 /* ContentView.swift */,
-				E6A87DA12459E1E000F4A11F /* SoundSceneStateIndicatorView.swift */,
 				E64DBAE1245B2BBE005CD0DC /* SceneCardView.swift */,
 				E64DBAE3245B2BDC005CD0DC /* GifPlayerView.swift */,
+				E6A87DA12459E1E000F4A11F /* SoundSceneStateIndicatorView.swift */,
+				E6CFA79B245B3AFE005E3B8C /* SoundSceneOnDemandStateIndicatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,7 +180,6 @@
 				E64DBAE0245B2BAB005CD0DC /* Views */,
 				E64DBADF245B2B8E005CD0DC /* Models */,
 				E6BDF0EF2451F64900F3C406 /* Resources */,
-				E6BDF11E2452CF0500F3C406 /* Gif */,
 				E6BDF0CD2451F63800F3C406 /* AppDelegate.swift */,
 				E6BDF0CF2451F63800F3C406 /* SceneDelegate.swift */,
 				E6BDF0D32451F63900F3C406 /* Assets.xcassets */,
@@ -358,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CFA79A245B3AA9005E3B8C /* OnDemandResource.swift in Sources */,
 				E64DBAE4245B2BDC005CD0DC /* GifPlayerView.swift in Sources */,
 				E6BDF0CE2451F63800F3C406 /* AppDelegate.swift in Sources */,
 				E6BDF0D02451F63800F3C406 /* SceneDelegate.swift in Sources */,
@@ -366,7 +376,9 @@
 				E64DBAE2245B2BBE005CD0DC /* SceneCardView.swift in Sources */,
 				E6BDF11B2451FD8400F3C406 /* Gif.swift in Sources */,
 				E6A87DA22459E1E000F4A11F /* SoundSceneStateIndicatorView.swift in Sources */,
+				E6CFA798245B3A89005E3B8C /* SoundScenesScreen.swift in Sources */,
 				E6BDF11D2452CF0000F3C406 /* GifPlayer.swift in Sources */,
+				E6CFA79C245B3AFE005E3B8C /* SoundSceneOnDemandStateIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

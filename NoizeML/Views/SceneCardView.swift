@@ -3,7 +3,7 @@ import SwiftUI
 
 struct SceneCardView: View {
 
-    let scene: SoundScene
+    let card: SoundScenesScreen.SceneCard
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -14,7 +14,7 @@ struct SceneCardView: View {
     }
 
     private var player: some View {
-        scene.coverImage
+        card.scene.coverImage
             .flatMap(Gif.init)
             .map(GifPlayer.init)
             .map(GifPlayerView.init)
@@ -22,12 +22,12 @@ struct SceneCardView: View {
 
     private var infoPanel: some View {
         HStack {
-            Text(scene.title)
+            Text(card.scene.title)
                 .font(Font.title.bold())
 
             Spacer()
 
-            SoundSceneStateIndicatorView()
+            OnDemandStateView(resource: card.resource)
         }
         .foregroundColor(.white)
         .padding(.horizontal, 4)
@@ -36,7 +36,7 @@ struct SceneCardView: View {
     }
 
     private var infoPanelBackground: some View {
-        UIImage(named: scene.coverImageName)
+        UIImage(named: card.scene.coverImageName)
             .map {
                 Image(uiImage: $0)
                     .resizable()

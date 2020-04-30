@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    let screen = SoundScenesScreen()
+
     var body: some View {
         NavigationView {
-            List(SoundScene.allCases, id: \.rawValue) { scene in
-                SceneCardView(scene: scene).padding(.vertical)
+            List(screen.cards, id: \.scene.rawValue) { card in
+                SceneCardView(card: card).padding(.vertical)
             }
             .navigationBarTitle("Sound scenes")
         }

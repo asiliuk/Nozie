@@ -7,6 +7,7 @@ struct SoundSceneStateIndicatorView: View {
         case download
         case inProgress(CGFloat)
         case play
+        case pause
     }
 
     var state: State = .download
@@ -21,6 +22,8 @@ struct SoundSceneStateIndicatorView: View {
                 return AnyView(DownloadProgressView(progress: progress).padding(6))
             case .play:
                 return AnyView(Image(systemName: "play.fill").offset(x: 2))
+            case .pause:
+                return AnyView(Image(systemName: "pause.fill").offset(x: 2))
             }
         }
         .frame(width: 44, height: 44)
@@ -53,7 +56,7 @@ private struct DownloadProgressView: View {
         .padding(lineWidth / 2)
     }
 
-    private let lineWidth: CGFloat = 4
+    private let lineWidth: CGFloat = 2
 
 }
 
@@ -65,6 +68,7 @@ struct SoundSceneStateIndicator_Previews: PreviewProvider {
             SoundSceneStateIndicatorView()
             SoundSceneStateIndicatorView(state: .inProgress(0.8))
             SoundSceneStateIndicatorView(state: .play)
+            SoundSceneStateIndicatorView(state: .pause)
         }
         .background(Color.black)
         .previewLayout(.sizeThatFits)
