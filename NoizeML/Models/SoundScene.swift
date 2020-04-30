@@ -51,6 +51,10 @@ extension SoundScene {
         Bundle(for: BundleTag.self).url(forResource: "i\(rawValue)", withExtension: "gif")
     }
 
+    var soundFile: URL? {
+        Bundle(for: BundleTag.self).url(forResource: "a\(rawValue)", withExtension: "mp3")
+    }
+
     var soundFileTag: String {
         "sound_a\(rawValue)"
     }

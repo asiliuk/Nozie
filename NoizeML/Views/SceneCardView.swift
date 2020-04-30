@@ -27,7 +27,7 @@ struct SceneCardView: View {
 
             Spacer()
 
-            OnDemandStateView(resource: card.resource)
+            SoundSceneStateView(state: card.state)
         }
         .foregroundColor(.white)
         .padding(.horizontal, 4)
