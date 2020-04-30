@@ -1,17 +1,17 @@
 import Foundation
 import SwiftUI
 
-enum SoundScene: String, CaseIterable {
-    case waterfallInForest = "i1"
-    case thunderstormRain = "i2"
-    case cafeMusic = "i3"
-    case brownNoise = "i4"
-    case rainyDay = "i5"
-    case medievalTown = "i6"
-    case celestialNoise = "i7"
-    case metropolisSoundscape = "i8"
-    case snowyBlizzard = "i9"
-    case forestAmbience = "i10"
+enum SoundScene: Int, CaseIterable {
+    case waterfallInForest = 1
+    case thunderstormRain
+    case cafeMusic
+    case brownNoise
+    case rainyDay
+    case medievalTown
+    case celestialNoise
+    case metropolisSoundscape
+    case snowyBlizzard
+    case forestAmbience
 }
 
 extension SoundScene {
@@ -43,8 +43,12 @@ extension SoundScene {
 
 extension SoundScene {
 
+    var coverImageName: String {
+        "i\(rawValue).gif"
+    }
+
     var coverImage: URL? {
-        bundle.url(forResource: rawValue, withExtension: "gif")
+        Bundle(for: BundleTag.self).url(forResource: "i\(rawValue)", withExtension: "gif")
     }
 
     var soundFild: URL? {

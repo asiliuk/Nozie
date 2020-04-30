@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct SoundSceneStateIndicator: View {
+struct SoundSceneStateIndicatorView: View {
 
     enum State {
         case download
@@ -18,28 +18,16 @@ struct SoundSceneStateIndicator: View {
             case .download:
                 return AnyView(Image(systemName: "square.and.arrow.down"))
             case let .inProgress(progress):
-                return AnyView(DownloadProgress(progress: progress).padding(6))
+                return AnyView(DownloadProgressView(progress: progress).padding(6))
             case .play:
                 return AnyView(Image(systemName: "play.fill").offset(x: 2))
             }
         }
-        .foregroundColor(.blue)
         .frame(width: 44, height: 44)
-        .background(BluredCircle())
     }
 }
 
-private struct BluredCircle: View {
-
-    var body: some View {
-        Circle()
-            .foregroundColor(.white)
-            .opacity(0.7)
-            .clipShape(Circle())
-    }
-}
-
-private struct DownloadProgress: View {
+private struct DownloadProgressView: View {
 
     let progress: CGFloat
     init(progress: CGFloat) {
@@ -74,9 +62,9 @@ struct SoundSceneStateIndicator_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            SoundSceneStateIndicator()
-            SoundSceneStateIndicator(state: .inProgress(0.8))
-            SoundSceneStateIndicator(state: .play)
+            SoundSceneStateIndicatorView()
+            SoundSceneStateIndicatorView(state: .inProgress(0.8))
+            SoundSceneStateIndicatorView(state: .play)
         }
         .background(Color.black)
         .previewLayout(.sizeThatFits)
