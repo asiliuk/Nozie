@@ -71,7 +71,7 @@
 		E6A87D952459D49500F4A11F /* a6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a6.mp3; sourceTree = "<group>"; };
 		E6A87D962459D49500F4A11F /* a7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = a7.mp3; sourceTree = "<group>"; };
 		E6A87DA12459E1E000F4A11F /* SoundSceneStateIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSceneStateIndicatorView.swift; sourceTree = "<group>"; };
-		E6BDF0CA2451F63800F3C406 /* NoizeML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoizeML.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6BDF0CA2451F63800F3C406 /* Noize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6BDF0CD2451F63800F3C406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6BDF0CF2451F63800F3C406 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E6BDF0D12451F63800F3C406 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		E6BDF0CB2451F63800F3C406 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E6BDF0CA2451F63800F3C406 /* NoizeML.app */,
+				E6BDF0CA2451F63800F3C406 /* Noize.app */,
 				E6BDF0E02451F63A00F3C406 /* NoizeMLTests.xctest */,
 			);
 			name = Products;
@@ -254,7 +254,7 @@
 			);
 			name = NoizeML;
 			productName = NoizeML;
-			productReference = E6BDF0CA2451F63800F3C406 /* NoizeML.app */;
+			productReference = E6BDF0CA2451F63800F3C406 /* Noize.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E6BDF0DF2451F63A00F3C406 /* NoizeMLTests */ = {
@@ -543,8 +543,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asiliuk.NoizeML;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Noize;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -563,8 +564,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asiliuk.NoizeML;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Noize;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
