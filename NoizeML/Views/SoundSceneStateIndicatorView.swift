@@ -34,7 +34,8 @@ private struct DownloadProgressView: View {
 
     let progress: CGFloat
     init(progress: CGFloat) {
-        self.progress = max(min(progress, 1), 0)
+        self.undefinedProgress = progress < minProgress
+        self.progress = max(min(progress, 1), minProgress)
     }
 
     var body: some View {
@@ -51,13 +52,23 @@ private struct DownloadProgressView: View {
             Circle()
                 .trim(from: 0, to: progress)
                 .stroke(style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
-                .rotationEffect(Angle(degrees: -90))
+                .rotationEffect(Angle(degrees: isLoadingPreparation ? 270 : -90))
+                .onAppear {
+                    guard self.undefinedProgress else { return }
+                    withAnimation(self.loadingPreparationAnimation) { self.isLoadingPreparation.toggle() }
+                }
         }
         .padding(lineWidth / 2)
     }
 
-    private let lineWidth: CGFloat = 2
+    private let minProgress: CGFloat = 0.1
+    @State private var isLoadingPreparation = false
+    private let loadingPreparationAnimation = Animation
+        .linear(duration: 1)
+        .repeatForever(autoreverses: false)
 
+    private let undefinedProgress: Bool
+    private let lineWidth: CGFloat = 2
 }
 
 #if DEBUG
@@ -66,6 +77,7 @@ struct SoundSceneStateIndicator_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SoundSceneStateIndicatorView()
+            SoundSceneStateIndicatorView(state: .inProgress(0))
             SoundSceneStateIndicatorView(state: .inProgress(0.8))
             SoundSceneStateIndicatorView(state: .play)
             SoundSceneStateIndicatorView(state: .pause)

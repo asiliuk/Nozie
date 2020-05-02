@@ -15,6 +15,7 @@ final class OnDemandResource: ObservableObject {
 
     init(tag: String) {
         self.request = NSBundleResourceRequest(tags: [tag])
+        self.request.loadingPriority = NSBundleResourceRequestLoadingPriorityUrgent
         self.request.conditionallyBeginAccessingResources { [weak self] loaded in
             DispatchQueue.main.async {
                 self?.state = loaded ? .downloaded : .needToLoad
@@ -31,9 +32,11 @@ final class OnDemandResource: ObservableObject {
 
     func cancel() {
         self.request.progress.cancel()
+        self.state = .needToLoad
     }
 
     func download() {
+        self.state = .inProgress(0)
         self.request.beginAccessingResources { [weak self] error in
             DispatchQueue.main.async {
                 self?.error = error
