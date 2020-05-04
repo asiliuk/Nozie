@@ -23,10 +23,10 @@ struct SoundSceneStateIndicatorView: View {
             case .play:
                 return AnyView(Image(systemName: "play.fill").offset(x: 2))
             case .pause:
-                return AnyView(Image(systemName: "pause.fill").offset(x: 2))
+                return AnyView(Image(systemName: "pause.fill"))
             }
         }
-        .frame(width: 44, height: 44)
+        .frame(minWidth: 44, minHeight: 44)
     }
 }
 
@@ -39,15 +39,18 @@ private struct DownloadProgressView: View {
     }
 
     var body: some View {
+        Image(systemName: "stop.fill")
+            .overlay(GeometryReader { proxy in
+                self.progressCircle.padding(-proxy.size.width / 1.5)
+            })
+    }
+
+    private var progressCircle: some View {
         ZStack {
             Circle()
                 .stroke(lineWidth: lineWidth)
                 .foregroundColor(.gray)
                 .opacity(0.6)
-
-            Image(systemName: "stop.fill")
-                .resizable()
-                .padding(8)
 
             Circle()
                 .trim(from: 0, to: progress)
@@ -61,6 +64,9 @@ private struct DownloadProgressView: View {
         .padding(lineWidth / 2)
     }
 
+    @Environment(\.sizeCategory) private var sizeCategory
+    private var lineWidth: CGFloat { sizeCategory.progressLineWidth }
+
     private let minProgress: CGFloat = 0.1
     @State private var isLoadingPreparation = false
     private let loadingPreparationAnimation = Animation
@@ -68,7 +74,26 @@ private struct DownloadProgressView: View {
         .repeatForever(autoreverses: false)
 
     private let undefinedProgress: Bool
-    private let lineWidth: CGFloat = 2
+}
+
+private extension ContentSizeCategory {
+
+    var progressLineWidth: CGFloat {
+        switch self {
+        case .extraSmall, .small, .medium:
+            return 1
+        case .large:
+            return 2
+        case .extraLarge, .extraExtraLarge, .extraExtraExtraLarge:
+            return 3
+        case .accessibilityMedium, .accessibilityLarge:
+            return 6
+        case .accessibilityExtraLarge, .accessibilityExtraExtraLarge, .accessibilityExtraExtraExtraLarge:
+            return 8
+        @unknown default:
+            return 2
+        }
+    }
 }
 
 #if DEBUG
